@@ -8,7 +8,6 @@ import { getAllPostsMeta } from "../lib/mdx";
 export async function getStaticProps() {
   // @ts-ignore
   // const posts = await prisma.post.findMany();
-
   const posts = getAllPostsMeta();
   return { props: { posts } };
 }
@@ -16,77 +15,78 @@ export async function getStaticProps() {
 const Home: NextPage = ({ posts }: any) => {
   return (
     <div>
-      {/* {JSON.stringify(posts)} */}
       <Head>
         <title>quochuydev</title>
         <meta name="description" content="quochuydev" />
         <link rel="icon" href="/code.png" />
       </Head>
 
-      <div className="sticky py-6 mb-6">
-        <div className="container flex justify-between mx-auto">
-          <a href="#" className="uppercase">
-            quochuydev
-          </a>
-          <div className="flex space-x-4">
-            <a href="#about">About</a>
-            <a href="#blog">Blog</a>
+      <header className="mx-auto max-w-4xl">
+        <div className="sticky py-6 mb-6">
+          <div className="container flex justify-between">
+            <a href="#" className="uppercase">
+              quochuydev
+            </a>
+            <div className="flex space-x-4">
+              <a href="#about">About</a>
+              <a href="#blog">Blog</a>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      <main className="mx-auto max-w-4xl">
-        <div className="about">
-          <div className="container">
-            <div className="flex">
-              <div className="pr-4">
+      <section className="mx-auto max-w-4xl">
+        <div className="container">
+          <div className="flex flex-wrap items-center">
+            {/*  */}
+            <div className="w-full md:w-1/2 lg:w-3/5 md:h-128">
+              <div className="max-w-md">
                 <h1 className="text-4xl font-bold">Hi there, I'm Huy</h1>
                 <div className="text-gray-800">
-                  <p>Hi there, I'm Huy.</p>
-                  <p>Hi there, I'm Huy.</p>
-                  <p>Hi there, I'm Huy.</p>
+                  <p>
+                    Learning new languages and technologies is what I am
+                    passionate about.
+                  </p>
+                  <p>
+                    With passion in learning language and having a good software
+                    knowledge, I want to become a Senior Software Engineer.
+                  </p>
                 </div>
               </div>
-              <div className="pl-4">
-                <img srcSet="./avatar.jpg" width={220} />
-              </div>
+            </div>
+
+            <div className="w-full md:h-64 md:w-1/2 lg:w-2/5">
+              <img
+                className="h-full w-full md:w-auto object-cover float-right"
+                src="./avatar.jpg"
+              />
             </div>
           </div>
-        </div>
 
-        <div className="blog">
-          <div className="container">
-            <h2 className="text-2xl font-bold">Recent Posts</h2>
-            {/* ----- */}
-            <div className="grid grid-cols-2">
-              <div>
-                <a href="#">
-                  <img src="#" alt="" />
-                  <h2>title</h2>
-                  <p>description</p>
+          <h2 className="text-2xl font-bold">Recent Posts</h2>
+          <div className="grid grid-cols-2 sm:gap-10">
+            {posts.map((e: any, i: number) => (
+              <div className="mt-10" key={i}>
+                <a href="#" className="group">
+                  <img src="#" />
+                  <h2 className="font-bold group-hover:text-blue-500">
+                    {e.title}
+                  </h2>
+                  <p className="text-gray-800">{e.description}</p>
                 </a>
               </div>
-              <div>
-                <a href="#">
-                  <img src="#" alt="" />
-                  <h2>title</h2>
-                  <p>description</p>
-                </a>
-              </div>
-            </div>
-            {/* ----- */}
+            ))}
           </div>
         </div>
-      </main>
+      </section>
 
-      <footer>
-        <div className="sticky">
-          <div className="container flex justify-between mx-auto">
-            <a href="#">Built with Next.js, Tailwind, Prisma</a>
-            <div className="flex space-x-4">
-              <a href="#">Github</a>
-              <a href="#">Instagram</a>
-            </div>
+      <footer className="mx-auto max-w-4xl mt-4">
+        <div className="container flex justify-between">
+          <p>Built with Next.js, Tailwind, Prisma</p>
+          <div className="flex space-x-4">
+            <a href="https://github.com/quochuydev">Github</a>
+            <a href="https://www.instagram.com/huyphamdev/">Instagram</a>
+            <a href="https://www.linkedin.com/in/quochuydev/">Linkedin</a>
           </div>
         </div>
       </footer>
