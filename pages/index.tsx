@@ -67,8 +67,8 @@ const Home: NextPage = ({ posts }: any) => {
           <div className="grid grid-cols-2 sm:gap-10">
             {posts.map((e: any, i: number) => (
               <div className="mt-10" key={i}>
-                <a href="#" className="group">
-                  <img src="#" />
+                <a href={e.slug} className="group">
+                  <img src={e.image} />
                   <h2 className="font-bold group-hover:text-blue-500">
                     {e.title}
                   </h2>
