@@ -1,16 +1,16 @@
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["mongoDb"]
+  previewFeatures = ["orderByRelation", "selectRelationCount"]
 }
 
 model Post {
-  id String @id @map("_id") @db.ObjectId
-  slug      String   @unique
+  id        String   @id @default(cuid())
+  slug      String   
   title     String
   body      String
   likes     Int      @default(1)

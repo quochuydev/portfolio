@@ -7,6 +7,16 @@ import { getAllPostsMeta } from "../lib/mdx";
 
 export async function getStaticProps() {
   // @ts-ignore
+  const post = await prisma.post.create({
+    data: {
+      slug: "post",
+      title: "post",
+      body: "post",
+    },
+  });
+  console.log(post);
+
+  // @ts-ignore
   // const posts = await prisma.post.findMany();
   const posts = getAllPostsMeta();
   return { props: { posts } };
