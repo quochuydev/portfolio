@@ -13,6 +13,7 @@ model Post {
   slug      String   
   title     String
   body      String
+  image     String
   likes     Int      @default(1)
   views     Int      @default(0)
   createdAt DateTime @default(now())

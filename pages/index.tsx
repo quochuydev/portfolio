@@ -9,17 +9,18 @@ export async function getStaticProps() {
   // @ts-ignore
   const post = await prisma.post.create({
     data: {
-      slug: "post",
-      title: "post",
-      body: "post",
+      slug: "how-i-build-commerce-with-next.jpg",
+      title: "How I build E-commerce website with NextJS",
+      body: "video1.mp4",
+      image: "how-i-build-commerce-with-next.jpg",
     },
   });
   console.log(post);
 
   // @ts-ignore
-  // const posts = await prisma.post.findMany();
-  const posts = getAllPostsMeta();
-  return { props: { posts } };
+  const posts = await prisma.post.findMany();
+  // const posts = getAllPostsMeta();
+  return { props: { posts: JSON.parse(JSON.stringify(posts)) } };
 }
 
 const Home: NextPage = ({ posts }: any) => {
@@ -82,7 +83,7 @@ const Home: NextPage = ({ posts }: any) => {
                   <h2 className="font-bold group-hover:text-blue-500">
                     {e.title}
                   </h2>
-                  <p className="text-gray-800">{e.description}</p>
+                  <p className="text-gray-800">{e.body}</p>
                 </a>
               </div>
             ))}
