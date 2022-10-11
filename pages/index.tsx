@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -55,13 +56,11 @@ const Home: NextPage = ({ posts }: any) => {
             </div>
 
             <div className="w-full md:h-64 md:w-1/2 lg:w-2/5">
-              {
-                <img
-                  className="h-full w-full md:w-auto object-cover float-right"
-                  src={"./avatar.jpg"}
-                  alt="avatar"
-                />
-              }
+              <img
+                className="h-full w-full md:w-auto object-cover float-right"
+                src={"./avatar.jpg"}
+                alt="avatar"
+              />
             </div>
           </div>
 
@@ -181,7 +180,13 @@ const Home: NextPage = ({ posts }: any) => {
               {posts.map((e: any, i: number) => (
                 <div className="mt-4" key={i}>
                   <a href={`posts/${e.slug}`} className="group">
-                    <img src={e.image} alt={e.title} />
+                    <img
+                      src={e.image}
+                      alt={e.title}
+                      style={{
+                        maxHeight: 250,
+                      }}
+                    />
                     <h2 className="font-bold group-hover:text-blue-500 text-xl">
                       {e.title}
                     </h2>
@@ -194,7 +199,7 @@ const Home: NextPage = ({ posts }: any) => {
         </div>
       </section>
 
-      <footer className="mx-auto max-w-4xl mt-4">
+      <footer className="mx-auto max-w-4xl mt-16">
         <div className="container flex justify-between">
           <p>Built with Next.js, Tailwind, Prisma</p>
           <div className="flex space-x-4">
