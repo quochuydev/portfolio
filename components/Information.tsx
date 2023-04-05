@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Information() {
   return (
-    <div className="mt-6">
+    <div className="mt-4">
       <h2 className="text-2xl font-bold">Information</h2>
 
       <div className="flex">

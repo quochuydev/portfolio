@@ -30,8 +30,8 @@ const Home: NextPage = ({ posts }: any) => {
               quochuydev
             </a>
             <div className="flex space-x-4">
-              <a href="#about">About</a>
-              <a href="#blog">Blog</a>
+              {/* <a href="#about">About</a>
+              <a href="#blog">Blog</a> */}
             </div>
           </div>
         </div>
@@ -43,15 +43,22 @@ const Home: NextPage = ({ posts }: any) => {
 
           <Information />
 
-          {/* <div>
-            <button className="mt-10 bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Download CV
-            </button>
-          </div> */}
-
           <TechnicalSkills />
 
           <PersonalProjects />
+
+          <div className="mt-10 text-l font-bold">
+            <h2>{`I'm looking for a partime/freelance job:`}</h2>
+          </div>
+
+          <div className="flex">
+            <a
+              href="mailto:quochuy.dev@gmail.com"
+              className="bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              {"Contact me: quochuy.dev@gmail.com"}
+            </a>
+          </div>
 
           {/* <RecentPosts posts={posts} /> */}
         </div>
