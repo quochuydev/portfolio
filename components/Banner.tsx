@@ -25,7 +25,8 @@ export default function Banner() {
       <div className="w-full md:h-64 md:w-1/2 lg:w-2/5">
         <img
           className="h-full w-full md:w-auto object-cover float-right"
-          src={"./avatar.jpg"}
+          // src={"./avatar.jpg"}
+          src={"#"}
           alt="avatar"
         />
       </div>

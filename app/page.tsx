@@ -2,19 +2,12 @@
 import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { getAllPostsMeta } from "../lib/mdx";
-import TechnicalSkills from "../components/TechnicalSkills";
-import PersonalProjects from "../components/PersonalProjects";
-import Information from "../components/Information";
 import Banner from "../components/Banner";
-// import RecentPosts from "../components/RecentPosts";
+import Information from "../components/Information";
+import PersonalProjects from "../components/PersonalProjects";
+import TechnicalSkills from "../components/TechnicalSkills";
 
-export async function getStaticProps() {
-  const posts = getAllPostsMeta();
-  return { props: { posts } };
-}
-
-const Home: NextPage = ({ posts }: any) => {
+const Home: NextPage = () => {
   return (
     <div>
       <Head>
@@ -30,8 +23,7 @@ const Home: NextPage = ({ posts }: any) => {
               quochuydev
             </a>
             <div className="flex space-x-4">
-              {/* <a href="#about">About</a>
-              <a href="#blog">Blog</a> */}
+              <a href="#blog">Blog</a>
             </div>
           </div>
         </div>
