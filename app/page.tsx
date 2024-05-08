@@ -1,13 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import type { NextPage } from "next";
 import Head from "next/head";
 import Banner from "../components/Banner";
 import Information from "../components/Information";
 import PersonalProjects from "../components/PersonalProjects";
 import TechnicalSkills from "../components/TechnicalSkills";
 
-const Home: NextPage = () => {
+export default function Page() {
   return (
     <div>
       <Head>
@@ -68,6 +67,4 @@ const Home: NextPage = () => {
       </footer>
     </div>
   );
-};
-
-export default Home;
+}
