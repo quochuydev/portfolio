@@ -1,12 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Head from "next/head";
-import Banner from "../components/Banner";
-import Information from "../components/Information";
-import PersonalProjects from "../components/PersonalProjects";
-import TechnicalSkills from "../components/TechnicalSkills";
+import Banner from "#/components/Banner";
+import Information from "#/components/Information";
+import PersonalProjects from "#/components/PersonalProjects";
+import TechnicalSkills from "#/components/TechnicalSkills";
+import Header from "#/components/Header";
+import Footer from "#/components/Footer";
+import RecentPosts from "#/components/RecentPosts";
 
 export default function Page() {
+  const posts: any = [];
+
   return (
     <div>
       <Head>
@@ -15,18 +20,7 @@ export default function Page() {
         <link rel="icon" href="/code.png" />
       </Head>
 
-      <header className="mx-auto max-w-4xl">
-        <div className="sticky py-6 mb-6">
-          <div className="container flex justify-between">
-            <a href="#" className="uppercase font-bold">
-              quochuydev
-            </a>
-            <div className="flex space-x-4">
-              <a href="#blog">Blog</a>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <section className="mx-auto max-w-4xl">
         <div className="container">
@@ -51,20 +45,11 @@ export default function Page() {
             </a>
           </div>
 
-          {/* <RecentPosts posts={posts} /> */}
+          <RecentPosts posts={posts} />
         </div>
       </section>
 
-      <footer className="mx-auto max-w-4xl mt-16">
-        <div className="container flex justify-between">
-          <p>Built with Next.js, Tailwind</p>
-          <div className="flex space-x-4">
-            <a href="https://github.com/quochuydev">Github</a>
-            <a href="https://www.instagram.com/huyphamdev/">Instagram</a>
-            <a href="https://www.linkedin.com/in/quochuydev/">Linkedin</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
