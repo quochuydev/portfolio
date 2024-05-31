@@ -15,8 +15,8 @@ export const getAllPostsMeta = () => {
   return paths.map((filePath: string): any => {
     const source = fs.readFileSync(path.join(filePath), "utf8");
     const slug = path.basename(filePath).replace(".mdx", "");
-    const { data } = matter(source);
-    return { ...data, slug };
+    const { content, data } = matter(source);
+    return { content, data, slug };
   });
 };
 

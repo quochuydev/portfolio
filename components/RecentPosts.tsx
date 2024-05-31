@@ -24,14 +24,14 @@ export default function RecentPosts(props: RecentPostsProps) {
           <div className="mt-4" key={i}>
             <a href={`posts/${post.slug}`} className="group">
               <img
-                src={post.image}
-                alt={post.title}
+                src={post.data.image}
+                alt={post.data.title}
                 style={{ maxHeight: 250 }}
               />
               <h2 className="font-bold group-hover:text-blue-500 text-xl">
-                {post.title}
+                {post.data.title}
               </h2>
-              <p className="text-gray-800">{post.description}</p>
+              <p className="text-gray-800">{post.data.description}</p>
             </a>
           </div>
         ))}

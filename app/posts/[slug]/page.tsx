@@ -4,6 +4,7 @@ import Head from "next/head";
 import Header from "#/components/Header";
 import Footer from "#/components/Footer";
 import { getPost } from "#/lib/mdx";
+import { CustomMDX } from "#/components/Mdx";
 
 export default async function Page({ params: { slug } }: any) {
   const post = await getPost(slug);
@@ -20,7 +21,9 @@ export default async function Page({ params: { slug } }: any) {
       <Header />
 
       <section className="mx-auto max-w-4xl">
-        <div className="container">{JSON.stringify(post)}</div>
+        <article className="prose">
+          <CustomMDX source={post.content} />
+        </article>
       </section>
 
       <Footer />
