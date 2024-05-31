@@ -1,16 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import Head from "next/head";
 import Banner from "#/components/Banner";
+import Footer from "#/components/Footer";
+import Header from "#/components/Header";
 import Information from "#/components/Information";
 import PersonalProjects from "#/components/PersonalProjects";
-import TechnicalSkills from "#/components/TechnicalSkills";
-import Header from "#/components/Header";
-import Footer from "#/components/Footer";
 import RecentPosts from "#/components/RecentPosts";
+import TechnicalSkills from "#/components/TechnicalSkills";
+import { getAllPostsMeta } from "#/lib/mdx";
+import Head from "next/head";
 
-export default function Page() {
-  const posts: any = [];
+export default async function Page() {
+  const posts = await getAllPostsMeta();
 
   return (
     <div>

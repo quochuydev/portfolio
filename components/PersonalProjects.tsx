@@ -6,12 +6,8 @@ export default function PersonalProjects() {
       <h2 className="text-2xl font-bold">Experience projects</h2>
 
       <div className="mt-4">
-        <h3>
-          <span className="font-bold">{"1. BidBid - Dating app"}</span>
-          <a href="https://bidbid.app/" target="_blank" rel="noreferrer">
-            (https://bidbid.app/)
-          </a>
-        </h3>
+        <h3 className="font-bold">{"1. BidBid - Dating app"}</h3>
+
         <ul className="mt-2">
           <li>- Manage tasks, estimate tasks and daily meeting with team.</li>
           <li>- Develop and provide API for Mobile App and Web App.</li>
